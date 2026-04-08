@@ -1,0 +1,15 @@
+:root {
+  /* 复刻对方的青蓝色调 */
+  --vp-c-brand-1: #10b981; /* 如果你想完全一样，可以用吸管工具吸取对方网站颜色，这里我放一个类似的青色 */
+  --vp-c-brand-2: #34d399;
+  --vp-c-brand-3: #059669;
+  
+  /* 首页 Hero 标题的渐变色 */
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #34d399 30%, #3b82f6);
+}
+
+/* 调整首页 Feature 卡片的样式 */
+.VPFeature {
+  border-radius: 12px;
+  background-color: var(--vp-c-bg-soft);
+}

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+Sitemap: https://www.chatgpt-chinese-guide.com/sitemap.xml
