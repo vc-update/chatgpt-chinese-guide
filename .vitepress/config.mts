@@ -142,6 +142,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'ChatGPT怎么赚钱？2026年AI副业实战指南：7个靠谱变现方向', link: '/chatgpt/chatgpt-ai-fuye-zhuanqian-shizhan-zhinan-2026.html' },
             { text: 'ChatGPT写代码靠谱吗？GPT-5.4/Claude 4.6编程实测', link: '/chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026.html' },
             { text: 'ChatGPT国内能用吗？2026年4月亲测6种访问方法（免费+付费全覆盖）', link: '/chatgpt/chatgpt-guonei-neng-yong-ma-6zhong-fangfa-shice-2026.html' },
             { text: 'AI论文写作指南2026：用ChatGPT和Claude写论文的正确方法（附降重+润色Prompt）', link: '/chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026.html' },
