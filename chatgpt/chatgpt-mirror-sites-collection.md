@@ -1,7 +1,7 @@
 ---
 title: ChatGPT中文版国内直连推荐：稳定、高速、免费体验 | ChatGPT中文版
 shortTitle: ChatGPT 国内直连推荐
-date: 2025-11-23
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 推荐国内最佳ChatGPT体验入口，无需翻墙，直连访问。重点介绍ChatGPT中文版、镜像网站及聚合平台，助您轻松使用GPT-4o、GPT-5等AI工具。
 head:

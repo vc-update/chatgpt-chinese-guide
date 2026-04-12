@@ -17,6 +17,7 @@ head:
   - - meta
     - property: og:type
       content: article
+date: 2026-04-12
 ---
 
 # ChatGPT写代码靠谱吗？2026年4月GPT-5.4/Claude 4.6编程实测｜AI写代码完整教程

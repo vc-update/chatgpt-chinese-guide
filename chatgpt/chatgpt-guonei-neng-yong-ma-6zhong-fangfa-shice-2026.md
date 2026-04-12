@@ -10,6 +10,7 @@ head:
   - - meta
     - name: og:description
       content: '实测6种国内使用ChatGPT的方法，附稳定性评分和适用人群推荐'
+date: 2026-04-12
 ---
 
 # ChatGPT国内能用吗？2026年4月亲测6种访问方法（免费+付费全覆盖）

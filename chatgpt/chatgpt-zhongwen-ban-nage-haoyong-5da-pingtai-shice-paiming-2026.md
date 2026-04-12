@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: ChatGPT中文版哪个好用,ChatGPT中文版推荐,ChatGPT国内平台排名,GPT-5.4中文版,ChatGPT镜像站推荐2026,ChatGPT中文版对比,国内AI平台排名,SnakeGPT,GPTCat,ChatGPT怎么选,ChatGPT中文版测评
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT中文版哪个好用？2026年3月国内5大AI平台实测排名

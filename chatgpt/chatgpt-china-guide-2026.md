@@ -5,6 +5,7 @@ head:
   - - meta
     - name: keywords
       content: ChatGPT,Chat GPT,ChatGPT中文版,GPT-5,GPT-4o,国内使用,SnakeGPT,GPTCat,人工智能
+date: 2026-04-12
 ---
 
 # ChatGPT 中文版：2026年免费使用指南与镜像网站推荐（支持 GPT5、GPT-4o，无需翻墙）

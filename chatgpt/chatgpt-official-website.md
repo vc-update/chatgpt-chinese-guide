@@ -1,7 +1,7 @@
 ---
 title: ChatGPT 官网中文版国内使用指南（支持GPT-5.2 & GPT-4o）【2026年1月持续更新】 | ChatGPT中文版
 shortTitle: ChatGPT 官网使用指南
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 【2026年1月最新】提供官方认证的ChatGPT官网地址入口，并详解国内用户如何免翻墙、免注册访问。本文将一步步教你如何通过国内优质聚合平台，快速、安全地使用支持GPT-5.2和GPT-4o的中文版ChatGPT服务。
 head:

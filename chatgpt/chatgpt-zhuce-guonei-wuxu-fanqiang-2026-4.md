@@ -10,6 +10,7 @@ head:
   - - meta
     - name: og:description
       content: '2026年4月实测，国内邮箱直接注册ChatGPT中文版，零门槛上手GPT-5.4'
+date: 2026-04-12
 ---
 
 # ChatGPT注册教程2026：国内无需翻墙，3分钟搞定中文版账号（4月实测可用）

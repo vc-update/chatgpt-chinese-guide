@@ -7,6 +7,7 @@ head:
     - name: keywords
       content: Gemini 3.1 Pro,Gemini中文版,Gemini国内使用,Google Gemini怎么用,Gemini官网,Gemini教程2026,Gemini免翻墙,AI工具对比,ChatGPT替代,GPT-5.4
 outline: deep
+date: 2026-04-12
 ---
 
 # Gemini 3.1 Pro国内怎么用？2026年4月最新Google Gemini中文版使用教程

@@ -3,6 +3,7 @@ title: ChatGPT中文版怎么用？2026最新使用指南（新手必看）
 description: 2026年最新 ChatGPT 中文版保姆级使用教程。从零教你什么是 ChatGPT 中文版，国内如何免翻墙直接登录，以及新手必学的万能提问公式（Prompt）。推荐国内首发支持 GPT-5.4 的官方接口聚合平台 SnakeGPT 与 GPTCat。
 keywords: ChatGPT中文版怎么用, ChatGPT新手教程, ChatGPT怎么用, ChatGPT国内使用, ChatGPT指令, GPT-5.4, SnakeGPT, GPTCat
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT中文版怎么用？2026最新使用指南（新手必看）

@@ -10,6 +10,7 @@ head:
   - - meta
     - name: og:description
       content: '三大AI编程模型深度横评，附国内免翻墙使用方案和真实代码测试结果'
+date: 2026-04-12
 ---
 
 # AI编程工具实测2026：用ChatGPT/Claude/DeepSeek写代码，谁是程序员最佳搭档？

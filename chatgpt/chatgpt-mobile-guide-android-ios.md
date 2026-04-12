@@ -1,7 +1,7 @@
 ---
 title: ChatGPT手机怎么用？2026年国内安卓+苹果完整使用教程（免翻墙）
 shortTitle: ChatGPT手机使用教程
-date: 2026-03-20
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 2026年最新教程，手把手教国内用户在安卓和苹果手机上使用ChatGPT，无需翻墙，国内邮箱直接注册，支持GPT-5.4等最新模型，附推荐平台。
 head:

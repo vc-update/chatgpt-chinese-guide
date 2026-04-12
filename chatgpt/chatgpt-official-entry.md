@@ -1,7 +1,7 @@
 ---
 title: ChatGPT官方网址入口（官网网址登录入口）- ChatGPT中文版
 shortTitle: ChatGPT 官网入口
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 2026年1月最新ChatGPT官网入口及ChatGPT中文版使用教程。提供ChatGPT官方网址登录入口、国内可用的ChatGPT镜像网站推荐、GPT-4o/GPT-5.2使用指南。无需翻墙，国内直连，解决ChatGPT注册和登录难题。
 head:

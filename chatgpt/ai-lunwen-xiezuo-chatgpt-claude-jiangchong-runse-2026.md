@@ -10,6 +10,7 @@ head:
   - - meta
     - name: og:description
       content: '开题报告、文献综述、润色降重全流程，附30+学术Prompt模板，实测GPT-5.4和Claude 4.6'
+date: 2026-04-12
 ---
 
 # AI论文写作指南2026：用ChatGPT和Claude写论文的正确方法（附降重+润色Prompt）

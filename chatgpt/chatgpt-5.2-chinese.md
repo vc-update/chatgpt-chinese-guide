@@ -3,6 +3,7 @@ title: ChatGPT 国内中文版使用指南，支持GPT-5.2，GPT-5【2026年2月
 description: 2026年2月最新 ChatGPT 中文版使用教程。深度解析 OpenAI 最新发布的 ChatGPT-5.2 (System 2) 与 ChatGPT-5 的区别。国内用户如何直连？推荐支持 GPT-5.2 深度思考的企业级中文版平台 SnakeGPT，以及视觉专用平台 GPTCat。
 keywords: chatgpt, chatgpt中文版, chatgpt-5, chatgpt-5.2, SnakeGPT, GPTCat, ChatGPT国内使用
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT 国内中文版使用指南，支持GPT-5.2，GPT-5【2026年3月最新更新】

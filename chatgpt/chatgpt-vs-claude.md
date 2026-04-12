@@ -1,7 +1,7 @@
 ---
 title: ChatGPT vs Claude 深度对比：2026年AI助手全面评测 | ChatGPT中文版
 shortTitle: ChatGPT vs Claude 评测
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 2026年最新ChatGPT与Claude深度对比评测。从编程、写作、逻辑推理多维度分析GPT-5.2与Claude 3.5 Sonnet。提供国内直连ChatGPT中文版入口，无需翻墙即可体验最强AI模型。
 head:

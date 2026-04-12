@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: AI工具推荐,国内AI排行榜,ChatGPT替代品,DeepSeek,Gemini,Grok,Claude,AI工具对比2026,ChatGPT中文版,SnakeGPT,GPTCat,国内AI平台
 outline: deep
+date: 2026-04-12
 ---
 
 # 2026年国内AI工具推荐排行榜：五大模型横评实测

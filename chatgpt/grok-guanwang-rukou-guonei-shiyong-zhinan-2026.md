@@ -3,6 +3,7 @@ title: 'Grok官网入口：国内Grok使用保姆级指南（2026年最新）'
 description: '2026年国内如何访问Grok？本文提供Grok官网入口、注册教程、国内镜像访问方案，以及Grok 4.2与ChatGPT、Claude 4.6的横评对比，无需翻墙即可体验Grok。'
 keywords: 'Grok官网入口,Grok国内使用,Grok中文版,Grok 4.2,国内访问Grok,Grok镜像,Grok使用教程2026'
 outline: deep
+date: 2026-04-12
 ---
 
 # Grok官网入口：国内Grok使用保姆级指南（2026年最新）

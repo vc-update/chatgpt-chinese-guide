@@ -17,6 +17,7 @@ head:
   - - meta
     - property: og:type
       content: article
+date: 2026-04-12
 ---
 
 # ChatGPT怎么赚钱？2026年AI副业实战指南：7个靠谱变现方向（附真实案例+Prompt模板）

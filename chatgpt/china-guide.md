@@ -1,6 +1,7 @@
 ---
 title: 2026最新 ChatGPT中文版使用指南（国内免费使用 GPT-4o / GPT-5）
 description: ChatGPT中文版国内使用教程，包含ChatGPT官网入口、国内注册方法、GPT-4o使用教程以及稳定的ChatGPT中文镜像网站推荐。
+date: 2026-04-12
 ---
 
 # 2026最新 ChatGPT中文版使用指南（国内免费使用 GPT-4o / GPT-5）

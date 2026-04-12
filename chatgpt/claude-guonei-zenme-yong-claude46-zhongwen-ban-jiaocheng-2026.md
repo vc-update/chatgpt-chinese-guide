@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: Claude国内怎么用,Claude中文版,Claude 4.6,Claude国内使用教程,Claude免翻墙,Claude替代方案,Anthropic Claude,Claude注册,Claude中文版平台,GPTCat Claude
 outline: deep
+date: 2026-04-12
 ---
 
 # Claude国内怎么用？2026年4月Claude 4.6中文版使用教程

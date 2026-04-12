@@ -1,7 +1,7 @@
 ---
 title: 国内如何使用 ChatGPT：2026年新手保姆级教程 | ChatGPT中文版
 shortTitle: ChatGPT 国内使用指南
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 2026年最新ChatGPT国内使用指南。手把手教你如何不翻墙使用GPT-5.2、GPT-4o等最新模型。涵盖账号注册、镜像站推荐、提问技巧及高级功能实战，助你快速掌握AI效率神器。
 head:

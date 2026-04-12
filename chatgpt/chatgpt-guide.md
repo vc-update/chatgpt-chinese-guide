@@ -2,6 +2,7 @@
 title: ChatGPT官网终极指南：国内如何轻松使用 GPT（支持GPT-5 & GPT-4o）
 description: 2026最新ChatGPT官网使用指南。详解如何访问ChatGPT官网、注册账号、订阅Plus，并推荐国内稳定的ChatGPT镜像站和替代方案。
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT官网终极指南：国内如何轻松使用 GPT（支持GPT-5 & GPT-4o）

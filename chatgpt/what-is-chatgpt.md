@@ -1,6 +1,7 @@
 ---
 title: 什么是 ChatGPT？
 description: 全面介绍 ChatGPT 的基本概念、发展历程、核心技术与应用场景
+date: 2026-04-12
 ---
 
 # 什么是 ChatGPT？

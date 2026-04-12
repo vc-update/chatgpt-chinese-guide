@@ -10,6 +10,7 @@ head:
   - - meta
     - name: og:description
       content: '不想翻墙用ChatGPT？这5个替代品在国内直接可用，部分能力甚至超越ChatGPT'
+date: 2026-04-12
 ---
 
 # ChatGPT替代品有哪些？2026年4月国内可用的5个AI工具深度评测

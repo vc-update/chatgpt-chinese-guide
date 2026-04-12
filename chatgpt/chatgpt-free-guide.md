@@ -1,6 +1,6 @@
 ---
 title: ChatGPT 免费使用全攻略：2026年国内免费访问方法大全
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 tags:
   - ChatGPT

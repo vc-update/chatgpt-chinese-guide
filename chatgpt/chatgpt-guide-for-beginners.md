@@ -1,7 +1,7 @@
 ---
 title: ChatGPT 完整使用指南：2026年新手快速入门（支持 GPT-4o / GPT-5.2） | ChatGPT中文版
 shortTitle: ChatGPT 新手入门指南
-date: 2026-03-06
+date: 2026-04-12
 author: ChatGPT-China-Guide
 description: 【2026年1月更新】零基础新手的 ChatGPT 全面入门教程：国内无需翻墙的使用方法、官网注册流程、聚合平台推荐、功能场景与 Prompt 提问技巧、常见问题解答，帮你快速上手 GPT-4o / GPT-5.2。
 head:

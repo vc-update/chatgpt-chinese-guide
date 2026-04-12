@@ -3,6 +3,7 @@ title: 2026年3月重磅更新！ChatGPT中文版首发支持 GPT-5.3、Gemini 3
 description: 2026年3月 AI 圈大地震！全球“四大天王”模型全面换代。国内如何第一时间体验？SnakeGPT 与 GPTCat 聚合平台已全量同步升级至 GPT-5.3 (极致推理)、Gemini 3.1 Pro (超长多模态)、Claude 4.6 (神级文笔) 与 Grok 4.2。一份订阅，解锁全球最强算力。
 keywords: ChatGPT中文版, GPT-5.3, Gemini 3.1 Pro, Claude 4.6, Grok 4.2, SnakeGPT, GPTCat, 国内使用ChatGPT
 outline: deep
+date: 2026-04-12
 ---
 
 # 2026年3月重磅更新！ChatGPT中文版首发支持 GPT-5.3、Gemini 3.1 Pro 与 Claude 4.6

@@ -2,6 +2,7 @@
 title: ChatGPT 中文版国内直连指南：无需翻墙，免费体验 GPT-5.1 与 Claude 4.5 (2026最新版)
 description: 2026年全网最全 ChatGPT 中文版使用攻略。国内如何直连 GPT-5.1？为您推荐稳定不封号的镜像网站 SnakeGPT 与 GPTCat。支持 DeepSeek-V3、Gemini 3 Pro 及 MJ 绘画，无需魔法，微信扫码即用。
 keywords: ChatGPT 中文版, ChatGPT 镜像, 国内直连, GPT-5.1, 无需翻墙, SnakeGPT, GPTCat, DeepSeek
+date: 2026-04-12
 ---
 
 # ChatGPT 中文版国内直连指南：无需翻墙，免费体验 GPT-5.1 与 Claude 4.5 (2026最新版)

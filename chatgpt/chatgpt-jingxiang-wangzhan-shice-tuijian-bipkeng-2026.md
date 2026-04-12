@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: ChatGPT镜像网站,ChatGPT镜像站推荐,ChatGPT国内镜像,ChatGPT镜像哪个好,ChatGPT镜像2026,ChatGPT替代网站,SnakeGPT,GPTCat,稳定ChatGPT镜像
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT镜像网站哪个好？2026年4月实测推荐与避坑指南

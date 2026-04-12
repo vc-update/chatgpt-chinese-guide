@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: ChatGPT官网,ChatGPT官网入口,ChatGPT注册,ChatGPT国内使用,ChatGPT中文版,GPT-5.4,ChatGPT免翻墙,ChatGPT镜像站,ChatGPT怎么用,ChatGPT免费
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT官网入口在哪？2026年国内注册使用全流程（免翻墙+免费体验GPT-5.4）

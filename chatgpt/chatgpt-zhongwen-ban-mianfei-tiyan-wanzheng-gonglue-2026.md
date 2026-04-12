@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: ChatGPT中文版,ChatGPT中文版免费,ChatGPT中文版怎么用,GPT-5.4中文版,ChatGPT国内使用,ChatGPT免费,SnakeGPT,GPTCat,AI中文版2026
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT中文版免费体验完整攻略：2026年4月国内直连GPT-5.4

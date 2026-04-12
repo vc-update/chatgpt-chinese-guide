@@ -6,6 +6,7 @@ head:
     - name: keywords
       content: ChatGPT中文版怎么用,ChatGPT使用教程,ChatGPT注册教程,GPT-5.4怎么用,ChatGPT国内使用,ChatGPT免翻墙,ChatGPT镜像,ChatGPT入门教程,ChatGPT Thinking模式,ChatGPT Deep Research,GPTCat,SnakeGPT,ChatGPT 2026年4月
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT中文版怎么用？2026年4月最新完整教程：从注册到精通GPT-5.4只需10分钟

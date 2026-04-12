@@ -2,6 +2,7 @@
 title: 国内免费使用 GPT 最新指南（支持GPT-5，无需翻墙）
 description: 2026年最新ChatGPT中文版使用指南。推荐国内可用的ChatGPT镜像网站，支持GPT-4、GPT-4o，永久免费，无需翻墙。
 outline: deep
+date: 2026-04-12
 ---
 
 # ChatGPT中文版：国内免费使用 GPT 最新指南（支持GPT-5，无需翻墙）
