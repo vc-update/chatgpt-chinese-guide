@@ -35,7 +35,6 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:url', content: 'https://www.chatgpt-chinese-guide.com' }],
     ['meta', { property: 'og:image', content: 'https://www.chatgpt-chinese-guide.com/og-image.png' }],
-    ['link', { rel: 'canonical', href: 'https://www.chatgpt-chinese-guide.com' }],
     [
       'script',
       { type: 'application/ld+json' },
@@ -415,6 +414,68 @@ export default defineConfig({
     
     search: {
       provider: 'local'
+    }
+  },
+
+  // 动态注入 per-page canonical + Article Schema + OG tags
+  transformPageData(pageData) {
+    const SITE_HOST = 'https://www.chatgpt-chinese-guide.com'
+    const SITE_NAME = 'ChatGPT使用指南'
+    const fm = pageData.frontmatter || {}
+    pageData.frontmatter.head = pageData.frontmatter.head || []
+
+    // 动态 canonical URL
+    const cleanPath = pageData.relativePath
+      .replace(/\.md$/, '')
+      .replace(/\/index$/, '')
+    const canonicalUrl = cleanPath ? `${SITE_HOST}/${cleanPath}` : SITE_HOST
+    pageData.frontmatter.head.push(
+      ['link', { rel: 'canonical', href: canonicalUrl }]
+    )
+
+    // 动态 OG tags
+    const pageTitle = fm.title || pageData.title || SITE_NAME
+    const pageDesc = fm.description || pageData.description || ''
+    pageData.frontmatter.head.push(
+      ['meta', { property: 'og:title', content: pageTitle }],
+      ['meta', { property: 'og:description', content: pageDesc }],
+      ['meta', { property: 'og:url', content: canonicalUrl }]
+    )
+
+    // 为非首页注入 Article Schema
+    if (pageData.relativePath !== 'index.md') {
+      const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: pageTitle,
+        description: pageDesc,
+        datePublished: fm.date
+          ? new Date(fm.date).toISOString()
+          : new Date('2026-01-01').toISOString(),
+        dateModified: fm.lastUpdated
+          ? new Date(fm.lastUpdated).toISOString()
+          : new Date().toISOString(),
+        author: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_HOST
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE_HOST
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl
+        },
+        inLanguage: 'zh-CN'
+      }
+      pageData.frontmatter.head.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(articleSchema)
+      ])
     }
   }
 })
