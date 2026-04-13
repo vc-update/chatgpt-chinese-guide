@@ -141,6 +141,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'ChatGPT中文版哪个好用？2026年4月5大平台实测对比', link: '/chatgpt/chatgpt-zhongwen-ban-nage-haoyong-5da-pingtai-shice-2026-april.html' },
             { text: 'ChatGPT官网入口地址是什么？2026年4月国内访问完整指南（附免翻墙方案）', link: '/chatgpt/chatgpt-guanwang-rukou-dizhi-guonei-fangwen-zhinan-2026.html' },
             { text: 'Claude国内怎么用？2026年4月Claude 4.6中文版使用教程（免翻墙+国内邮箱注册）', link: '/chatgpt/claude-guonei-zenme-yong-claude46-zhongwen-ban-jiaocheng-2026.html' },
             { text: 'ChatGPT怎么赚钱？2026年AI副业实战指南：7个靠谱变现方向', link: '/chatgpt/chatgpt-ai-fuye-zhuanqian-shizhan-zhinan-2026.html' },
