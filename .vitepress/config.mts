@@ -141,6 +141,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+			{ text: 'ChatGPT官网入口 2026 | 国内访问完整指南（含GPT-5.4最新模型）', link: '/chatgpt/chatgpt-guanwang-rukou-2026-april' },
 			{ text: 'Claude Opus 4.7正式发布！2026年4月最新升级内容全解析（附国内使用方法）', link: '/chatgpt/claude-opus-47-release-upgrade-guide-april-2026' },
             { text: 'ChatGPT注册教程2026：国内用户完整注册与使用指南', link: '/chatgpt/chatgpt-zhuce-jiaocheng-2026-04' },
             { text: 'ChatGPT下载安装教程2026：电脑/手机/网页版全平台使用指南（免翻墙+国内直连）', link: '/chatgpt/chatgpt-xiazai-anzhuang-jiaocheng-dianno-shouji-2026.html' },
