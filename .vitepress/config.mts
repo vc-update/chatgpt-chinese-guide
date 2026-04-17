@@ -35,6 +35,7 @@ export default defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:url', content: 'https://www.chatgpt-chinese-guide.com' }],
     ['meta', { property: 'og:image', content: 'https://www.chatgpt-chinese-guide.com/og-image.png' }],
+    ['link', { rel: 'canonical', href: 'https://www.chatgpt-chinese-guide.com' }],
     [
       'script',
       { type: 'application/ld+json' },
@@ -141,14 +142,11 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
-			{ text: 'Claude Opus 4.7正式发布！2026年4月最新升级内容全解析（附国内使用方法）', link: '/chatgpt/claude-opus-47-release-upgrade-guide-april-2026' },
+            { text: 'Claude 4.6 国内使用完整指南（2026年最新）', link: '/chatgpt/claude-4-6-guonei-shiyong-2026-04' },
+            { text: 'OpenAI ChatGPT国内中文版使用指南（GPT-5.4，2026年4月最新）', link: '/chatgpt/openai-chatgpt-guonei-zhongwen-ban-shiyong-zhinan-2026' },
+            { text: 'ChatGPT官网入口 2026 | 国内访问完整指南（含GPT-5.4最新模型）', link: '/chatgpt/chatgpt-guanwang-rukou-2026-april' },
+            { text: 'Claude Opus 4.7正式发布！2026年4月最新升级内容全解析（附国内使用方法）', link: '/chatgpt/claude-opus-47-release-upgrade-guide-april-2026' },
             { text: 'ChatGPT注册教程2026：国内用户完整注册与使用指南', link: '/chatgpt/chatgpt-zhuce-jiaocheng-2026-04' },
-            { text: 'ChatGPT下载安装教程2026：电脑/手机/网页版全平台使用指南（免翻墙+国内直连）', link: '/chatgpt/chatgpt-xiazai-anzhuang-jiaocheng-dianno-shouji-2026.html' },
-            { text: 'ChatGPT中文版哪个好用？2026年4月5大平台实测对比', link: '/chatgpt/chatgpt-zhongwen-ban-nage-haoyong-5da-pingtai-shice-2026-april.html' },
-            { text: 'ChatGPT官网入口地址是什么？2026年4月国内访问完整指南（附免翻墙方案）', link: '/chatgpt/chatgpt-guanwang-rukou-dizhi-guonei-fangwen-zhinan-2026.html' },
-            { text: 'Claude国内怎么用？2026年4月Claude 4.6中文版使用教程（免翻墙+国内邮箱注册）', link: '/chatgpt/claude-guonei-zenme-yong-claude46-zhongwen-ban-jiaocheng-2026.html' },
-            { text: 'ChatGPT怎么赚钱？2026年AI副业实战指南：7个靠谱变现方向', link: '/chatgpt/chatgpt-ai-fuye-zhuanqian-shizhan-zhinan-2026.html' },
-            { text: 'ChatGPT写代码靠谱吗？GPT-5.4/Claude 4.6编程实测', link: '/chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026.html' },
             { text: 'ChatGPT国内能用吗？2026年4月亲测6种访问方法（免费+付费全覆盖）', link: '/chatgpt/chatgpt-guonei-neng-yong-ma-6zhong-fangfa-shice-2026.html' },
             { text: 'AI论文写作指南2026：用ChatGPT和Claude写论文的正确方法（附降重+润色Prompt）', link: '/chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026.html' },
             { text: 'ChatGPT替代品有哪些？2026年4月国内可用的5个AI工具深度评测', link: '/chatgpt/chatgpt-tidaipin-guonei-keyong-ai-gongju-pingce-2026.html' },
@@ -419,68 +417,6 @@ export default defineConfig({
     
     search: {
       provider: 'local'
-    }
-  },
-
-  // 动态注入 per-page canonical + Article Schema + OG tags
-  transformPageData(pageData) {
-    const SITE_HOST = 'https://www.chatgpt-chinese-guide.com'
-    const SITE_NAME = 'ChatGPT使用指南'
-    const fm = pageData.frontmatter || {}
-    pageData.frontmatter.head = pageData.frontmatter.head || []
-
-    // 动态 canonical URL
-    const cleanPath = pageData.relativePath
-      .replace(/\.md$/, '')
-      .replace(/\/index$/, '')
-    const canonicalUrl = cleanPath ? `${SITE_HOST}/${cleanPath}` : SITE_HOST
-    pageData.frontmatter.head.push(
-      ['link', { rel: 'canonical', href: canonicalUrl }]
-    )
-
-    // 动态 OG tags
-    const pageTitle = fm.title || pageData.title || SITE_NAME
-    const pageDesc = fm.description || pageData.description || ''
-    pageData.frontmatter.head.push(
-      ['meta', { property: 'og:title', content: pageTitle }],
-      ['meta', { property: 'og:description', content: pageDesc }],
-      ['meta', { property: 'og:url', content: canonicalUrl }]
-    )
-
-    // 为非首页注入 Article Schema
-    if (pageData.relativePath !== 'index.md') {
-      const articleSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: pageTitle,
-        description: pageDesc,
-        datePublished: fm.date
-          ? new Date(fm.date).toISOString()
-          : new Date('2026-01-01').toISOString(),
-        dateModified: fm.lastUpdated
-          ? new Date(fm.lastUpdated).toISOString()
-          : new Date().toISOString(),
-        author: {
-          '@type': 'Organization',
-          name: SITE_NAME,
-          url: SITE_HOST
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: SITE_NAME,
-          url: SITE_HOST
-        },
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': canonicalUrl
-        },
-        inLanguage: 'zh-CN'
-      }
-      pageData.frontmatter.head.push([
-        'script',
-        { type: 'application/ld+json' },
-        JSON.stringify(articleSchema)
-      ])
     }
   }
 })
