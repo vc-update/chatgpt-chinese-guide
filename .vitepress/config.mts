@@ -142,6 +142,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'Claude 4.6 国内使用完整指南（2026年4月最新）', link: '/chatgpt/claude-4-6-guonei-shiyong-2026-04-419' },
             { text: 'ChatGPT 官网中文版：GPT-5.4 国内使用完全攻略（2026年4月）', link: '/chatgpt/chatgpt-gpt5-guanwang-wanzheng-gonglue-2026' },
             { text: 'ChatGPT官网入口 2026——国内直接访问完整指南（无需翻墙）', link: '/chatgpt/chatgpt-guanwang-rukou-2026-april-418' },
             { text: 'ChatGPT注册教程2026：官网注册+国内镜像完整指南（无需翻墙）', link: '/chatgpt/chatgpt-zhuce-jiaocheng-2026-04-418' },
