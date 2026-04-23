@@ -132,6 +132,7 @@ export default defineConfig({
       { text: 'ChatGPT介绍', link: '/chatgpt/' },
       { text: 'ChatGPT使用指南', link: '/guides/' },
       { text: '免责声明', link: '/disclaimer' },
+      { text: '🔌 API调用', link: 'https://www.zeoapi.com/register?aff=Pe3N' },
     ],
 
     // 2. 侧边栏 (基于你提供的源码提供的真·全量数据)
