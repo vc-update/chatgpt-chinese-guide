@@ -142,6 +142,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'ChatGPT下载教程2026：苹果/安卓/电脑完整指南（附国内可用方案）', link: '/chatgpt/chatgpt-xiazai-jiaocheng-2026-04' },
             { text: 'ChatGPT Images 2.0 深度测评：GPT-image-2实测对比，文字渲染终于能打了', link: '/chatgpt/chatgpt-images-2-gpt-image-2-update-april-2026' },
             { text: 'ChatGPT官网入口2026 | OpenAI官方网站访问指南与国内使用方法', link: '/chatgpt/chatgpt-guanwang-rukou-2026-04' },
             { text: 'ChatGPT中文版 2026完整指南｜无需翻墙直接使用GPT-5.4', link: '/chatgpt/chatgpt-zhongwenban-2026-april' },
