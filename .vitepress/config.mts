@@ -209,7 +209,7 @@ export default defineConfig({
             { text: 'ChatGPT中文版国内直连推荐', link: '/chatgpt/chatgpt-chinese-access-recommendation.html' },
             { text: 'ChatGPT国内如何使用', link: '/chatgpt/how-to-use-gpt.html' },
             { text: 'ChatGPT中文版', link: '/chatgpt/chatgpt-chinese.html' },
-            { text: 'ChatGPT 中文版国内直连指南：无需翻墙，免费体验 GPT-5.1 与 Claude 4.5 (2026最新版)', link: '/chatgpt/chatgpt-china-mirror-guide-2026.md' },
+            { text: 'ChatGPT 中文版国内直连指南：无需翻墙，免费体验 GPT-5.1 与 Claude 4.5 (2026最新版)', link: '/chatgpt/chatgpt-china-mirror-guide-2026' },
             { text: 'ChatGPT 中文版：2026年免费使用指南与镜像网站推荐（支持 GPT5、GPT-4o，无需翻墙）', link: '/chatgpt/chatgpt-china-guide-2026.html' },
             { text: 'ChatGPT 与 ChatGPT中文版：2026 官方最新介绍与国内使用终极指南 (支持GPT-5.2)', link: '/chatgpt/chatgpt-ultimate-guide-2026.html' },
             { text: 'ChatGPT 国内中文版使用指南，支持GPT-5.2，GPT-5', link: '/chatgpt/chatgpt-5.2-chinese.html' },
