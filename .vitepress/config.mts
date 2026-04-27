@@ -143,6 +143,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'ChatGPT 完整指南：国内使用教程、注册方法与中文版推荐（2026年04月最新）', link: '/chatgpt/chatgpt-complete-guide-china-2026-april' },
             { text: 'ChatGPT中文版完整使用指南 2026年04月最新 | 无需翻墙国内直接访问', link: '/chatgpt/chatgpt-zhongwen-ban-shiyong-zhinan-2026-04' },
             { text: 'ChatGPT 国内中文版完整使用指南【2026年04月最新】含GPT-5.4注册教程', link: '/chatgpt/chatgpt-guonei-zhongwen-ban-shiyong-zhinan-2026-04' },
             { text: 'ChatGPT网页版使用指南（2026年4月最新）| 国内访问方法+平台推荐', link: '/chatgpt/chatgpt-wangye-ban-shiyong-zhinan-2026-04' },
