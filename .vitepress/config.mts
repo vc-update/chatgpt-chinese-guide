@@ -143,6 +143,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: '"ChatGPT 2026年04月最新使用指南：国内访问、注册、中文版入口、常见问题一次讲清"', link: '/chatgpt/chatgpt-2026-04-latest-guide' },
             { text: '"ChatGPT国内中文版使用指南：官网入口、注册教程、模型对比与稳定使用方法【2026年04月最新】"', link: '/chatgpt/chatgpt-guide-cn-2026-04' },
             { text: '"ChatGPT官网入口与使用全指南（2026年04月最新）"', link: '/chatgpt/chatgpt-guanwang-2026-04' },
             { text: 'ChatGPT官网入口与国内使用指南：国内如何稳定使用ChatGPT中文版？', link: '/chatgpt/auto-article-1777391897924' },
