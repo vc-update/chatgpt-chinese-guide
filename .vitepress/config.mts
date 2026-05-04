@@ -143,6 +143,7 @@ export default defineConfig({
           text: 'ChatGPT介绍',
           collapsed: false,
           items: [
+            { text: 'ChatGPT怎么用？2026年05月最新完整使用教程（新手到进阶全攻略）', link: '/chatgpt/chatgpt-how-to-use-complete-guide-2026-05-504' },
             { text: 'ChatGPT怎么用？2026年5月最新完整使用教程（新手到进阶全攻略）', link: '/chatgpt/chatgpt-how-to-use-complete-guide-2026-05' },
             { text: 'ChatGPT怎么用？2026年05月最新完整使用教程（小白入门到精通）', link: '/chatgpt/chatgpt-zenme-yong-2026-05' },
             { text: 'ChatGPT怎么用？2026年05月最新完整使用教程（新手到高手）', link: '/chatgpt/chatgpt-how-to-use-guide-2026-05' },
