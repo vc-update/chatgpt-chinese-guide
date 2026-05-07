@@ -3,12 +3,12 @@ title: ChatGPT AI能做什么？写作、翻译、编程和办公场景全解析
 description: 2026年最新深度解析 ChatGPT 有什么用。从职场真实场景出发，全面盘点 ChatGPT AI 在公文写作、精准翻译、编程开发与日常办公中的核心用途。附新手快速上手指南与国内直连 AI 平台推荐。
 keywords: chatgpt ai, chatgpt有什么用, chatgpt能做什么, chatgpt用途, ChatGPT使用场景, SnakeGPT, GPT-5.4
 outline: deep
-date: 2026-04-12
+date: 2026-05-05
 ---
 
 # ChatGPT AI能做什么？写作、翻译、编程和办公场景全解析
 
-**更新时间：2026年3月 | 适用人群：希望用 AI 提升效率的所有人**
+**更新时间：2026年5月 | 适用人群：希望用 AI 提升效率的所有人**
 
 自从大语言模型爆火以来，几乎每个人都听说过 **ChatGPT AI** 的大名。但在热闹的资讯背后，很多新手朋友心里依然有个巨大的疑问：**ChatGPT到底能做什么？**
 

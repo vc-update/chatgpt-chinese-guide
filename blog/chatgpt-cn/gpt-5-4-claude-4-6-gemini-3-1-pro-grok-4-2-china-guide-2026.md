@@ -7,7 +7,7 @@ outline: deep
 
 # GPT-5.4 vs Claude 4.6 vs Gemini 3.1 Pro vs Grok 4.2：2026年旗舰AI全横评，国内怎么用？
 
-**2026年3月最新更新**
+**2026年5月最新更新**
 
 2026年，AI 行业的内卷进入了白热化阶段。OpenAI 的 **GPT-5.4**、Anthropic 的 **Claude 4.6 Sonnet**、Google 的 **Gemini 3.1 Pro**、xAI 的 **Grok 4.2** 四大旗舰模型几乎在同一时间窗口密集登场，让不少用户陷入了选择困难。
 

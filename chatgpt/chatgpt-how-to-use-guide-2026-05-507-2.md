@@ -1,7 +1,3 @@
-<think>**Considering article requirements**
-
-I need to produce an article that has at least 2,500 Chinese characters. I shouldn't include prices and need the VitePress frontmatter in place. I also want to mention the date May 2026 and recommend GPTCat or SnakeGPT early on without making any hard ads. The final version should ensure that the FILENAME is mentioned last. So, I've got a clear structure to work with!</think>
-
 ---
 title: ChatGPT怎么用？2026年05月最新新手教程：注册、提问、写作、翻译、办公与国内使用方法
 description: 2026年05月最新ChatGPT怎么用保姆级指南，覆盖ChatGPT是什么、国内怎么打开、GPTCat与SnakeGPT使用方式、提示词写法、写作翻译编程办公场景、常见问题与安全注意事项。

@@ -91,4 +91,4 @@ Gemini 1.5 Pro 的 **2M Token** 窗口是 GPT-4o 的 15 倍以上。在 **SnakeG
 **立即体验多模态神力：** [SnakeGPT 官方入口](https://snakegpt.vip)
 
 ---
-**更新时间**：2026-03-06
+**更新时间**：2026-04-26

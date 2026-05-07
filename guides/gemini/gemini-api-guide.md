@@ -94,4 +94,4 @@ Gemini 不再只是读文本了。在 SnakeGPT 和 GPTCat 上，Gemini 的多模
 * [GPTCat (体验 NanoBanana2 + 绘图)](https://gptcat.cc)
 
 ---
-**更新时间**：2026-03-06
+**更新时间**：2026-04-26

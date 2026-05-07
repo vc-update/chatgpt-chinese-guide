@@ -6,7 +6,7 @@ head:
     - name: keywords
       content: ChatGPT图片生成,GPT Image 2,ChatGPT Images 2.0,gpt-image-2,ChatGPT绘图教程,AI图片生成,ChatGPT画图怎么用,ChatGPT生成图片,AI绘图中文,ChatGPT提示词
 outline: deep
-date: 2026-04-23
+date: 2026-05-05
 ---
 
 # ChatGPT 图片生成完全指南：GPT Image 2 使用教程与提示词技巧（2026）

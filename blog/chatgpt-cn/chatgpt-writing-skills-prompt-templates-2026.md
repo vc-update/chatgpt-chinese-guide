@@ -7,7 +7,7 @@ outline: deep
 
 # ChatGPT写作技巧2026：10个立竿见影的Prompt模板，职场人亲测有效
 
-**更新时间：2026年3月 | 适用：职场人 · 学生 · 内容创作者**
+**更新时间：2026年5月 | 适用：职场人 · 学生 · 内容创作者**
 
 你可能已经用过 ChatGPT 了，但提问方式还停留在"帮我写一篇文章"这个层次——结果出来的东西要么太空洞，要么跟你想要的差十万八千里，改了三轮还是不对。
 
@@ -377,4 +377,4 @@ outline: deep
 - [ChatGPT 中文版怎么使用？2026 最新GPT-5.4国内使用指南](/blog/chatgpt-cn/how-to-use-chatgpt-chinese-version-gpt-5-4-guide-2026.html)
 - [GPT-5.4 震撼发布！国内怎么用？保姆级教程](/blog/chatgpt-cn/chatgpt-5-4-release-and-china-usage-guide-2026.html)
 
-*本文最后更新于 2026年3月。Prompt 模板持续迭代优化中。*
+*本文最后更新于 2026年5月。Prompt 模板持续迭代优化中。*

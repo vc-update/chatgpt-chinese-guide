@@ -6,12 +6,12 @@ head:
     - name: keywords
       content: ChatGPT网页版,ChatGPT在线使用,ChatGPT网页版在线,ChatGPT在线体验,ChatGPT网页版入口,ChatGPT在线免费,GPT-5.4网页版,SnakeGPT,GPTCat
 outline: deep
-date: 2026-04-12
+date: 2026-05-05
 ---
 
 # ChatGPT网页版在线使用指南：2026年4月国内免翻墙直接对话GPT-5.4
 
-> **更新时间：2026年4月** | 所有入口均已实测验证
+> **更新时间：2026年5月** | 所有入口均已实测验证
 
 很多人以为用 ChatGPT 必须下载App或安装软件，其实**最方便的方式就是网页版**——打开浏览器，输入网址，直接开聊。
 

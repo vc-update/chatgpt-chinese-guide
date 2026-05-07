@@ -1,7 +1,3 @@
-<think>**Drafting VitePress content**
-
-I need to produce Markdown for VitePress, making sure to stick to around 2,500 Chinese characters without mentioning any prices. The focus should be on May 2026 and ensuring the title includes the right keywords. I’ll incorporate products early in the draft while avoiding any hard advertisements. My goal is to create a comprehensive document that flows well. Let’s get started on this to make it engaging and informative!</think>
-
 ---
 title: ChatGPT怎么用？2026年05月最新新手教程：注册、提问、写作、翻译、编程与国内使用方法
 description: 2026年05月最新版 ChatGPT怎么用 新手指南，覆盖ChatGPT是什么、国内如何使用、提示词写法、办公写作、翻译、编程、图片理解、多轮对话、常见错误与FAQ，并对比官网、中文版与常见国内入口。

@@ -1,7 +1,3 @@
-<think>**Preparing VitePress markdown**
-
-I'm working on producing a markdown file for VitePress that includes around 2500 Chinese characters. I don't need to include prices, but I do need the frontmatter to be correct, including a title with keywords. Since it’s May 2026, I want to make sure to mention GPTCat or SnakeGPT early on. I should also include at least a FAQ table and ensure there's a final line with the filename. I’ll make sure everything is feasible!</think>
-
 ---
 title: ChatGPT怎么用？2026年05月最新新手教程：注册、提问、写作、翻译、办公与国内使用方法
 description: 2026年05月最新 ChatGPT 怎么用完整指南，覆盖ChatGPT是什么、国内如何使用、提示词写法、写作翻译编程办公场景、GPTCat与SnakeGPT等中文方案对比，以及常见问题FAQ。

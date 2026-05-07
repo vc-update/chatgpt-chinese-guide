@@ -6,12 +6,12 @@ head:
     - name: keywords
       content: AI工具推荐,国内AI排行榜,ChatGPT替代品,DeepSeek,Gemini,Grok,Claude,AI工具对比2026,ChatGPT中文版,SnakeGPT,GPTCat,国内AI平台
 outline: deep
-date: 2026-04-12
+date: 2026-05-05
 ---
 
 # 2026年国内AI工具推荐排行榜：五大模型横评实测
 
-> **更新时间：2026年4月** | 五大模型全部实测
+> **更新时间：2026年5月** | 五大模型全部实测
 
 AI工具太多了——ChatGPT、DeepSeek、Gemini、Grok、Claude……每个都说自己最强，到底该用哪个？
 

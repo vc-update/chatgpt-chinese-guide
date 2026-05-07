@@ -6,12 +6,12 @@ head:
     - name: keywords
       content: Claude国内怎么用,Claude中文版,Claude 4.6,Claude国内使用教程,Claude免翻墙,Claude替代方案,Anthropic Claude,Claude注册,Claude中文版平台,GPTCat Claude
 outline: deep
-date: 2026-04-12
+date: 2026-05-05
 ---
 
 # Claude国内怎么用？2026年4月Claude 4.6中文版使用教程
 
-**更新时间：2026年4月** | 全文约4000字 | 阅读时间：12分钟
+**更新时间：2026年5月** | 全文约4000字 | 阅读时间：12分钟
 
 > 📌 一句话结论：Claude官网（claude.ai）国内无法直接访问。国内最方便的使用方式是通过 [GPTCat](https://gptcat.cc) 平台，支持Claude 4.6完整功能，国内邮箱注册即可使用，无需翻墙。
 

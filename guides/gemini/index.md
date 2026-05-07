@@ -49,4 +49,4 @@ Gemini 已深度集成于 Google Workspace 全家桶（Docs, Gmail, Drive, Sheet
 * **开发者平台 (Google AI Studio)**: [aistudio.google.com](https://aistudio.google.com)
 
 ---
-*版权所有 © 2025 ChatGPT中文版 | 最后更新于: 2026-03-06*
+*版权所有 © 2025 ChatGPT中文版 | 最后更新于: 2026-05-05*
