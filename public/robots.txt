@@ -1,13 +1,49 @@
+# https://www.chatgpt-chinese-guide.com/robots.txt
+# 更新时间：2026-05-11
+
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /*.json$
+Disallow: /404
+Disallow: /404.html
 
-User-agent: Baiduspider
-Allow: /
-
+# 主流搜索引擎显式 Allow
 User-agent: Googlebot
 Allow: /
 
 User-agent: bingbot
 Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# 屏蔽 AI 训练爬虫（节省带宽，避免内容被白嫖训练）
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
 
 Sitemap: https://www.chatgpt-chinese-guide.com/sitemap.xml

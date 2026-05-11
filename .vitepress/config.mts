@@ -11,12 +11,24 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://www.chatgpt-chinese-guide.com',
     transformItems: (items) => {
-      return items.map(item => ({
-        ...item,
-        changefreq: 'weekly',
-        priority: 0.7,
-        lastmod: new Date().toISOString()
-      }))
+      return items.map(item => {
+        const url = item.url || ''
+        let priority = 0.6
+        let changefreq: 'daily' | 'weekly' | 'monthly' = 'monthly'
+        if (url === '' || url === '/' || url === 'index.html') {
+          priority = 1.0
+          changefreq = 'weekly'
+        } else if (/^(chatgpt|guides|blog)\/?$/.test(url) || /\/index\.html$/.test(url)) {
+          priority = 0.8
+          changefreq = 'weekly'
+        }
+        return {
+          ...item,
+          changefreq: item.changefreq || changefreq,
+          priority: item.priority ?? priority,
+          // 不覆盖 lastmod；VitePress 默认会用 git/文件 mtime
+        }
+      })
     }
   },
   // 显示最后更新时间，搜索引擎喜欢新鲜内容
@@ -24,18 +36,22 @@ export default defineConfig({
 
   // 3. Head 配置
   head: [
-    ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'msvalidate.01', content: '283F4ED132291BB65C882E27214A15B8' }],
-    // SEO 关键词
+    // 站点级 keywords / og（首页/未指定页面的 fallback；内页会被 transformHead 覆盖）
     ['meta', { name: 'keywords', content: 'ChatGPT,ChatGPT中文版,ChatGPT教程,ChatGPT官网,ChatGPT使用指南,ChatGPT镜像网站,GPT-5.4,OpenAI,AI使用教程' }],
     ['meta', { name: 'author', content: 'ChatGPT使用指南' }],
-    ['meta', { name: 'robots', content: 'index,follow' }],
-    ['meta', { property: 'og:title', content: 'ChatGPT教程 | ChatGPT中文版使用指南 | ChatGPT官网入门攻略' }],
-    ['meta', { property: 'og:description', content: '最全面的ChatGPT中文使用教程与评测中心。ChatGPT官网入门指南、中文版平台排名、GPT-5.4模型对比。' }],
+    ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://www.chatgpt-chinese-guide.com' }],
+    ['meta', { property: 'og:site_name', content: 'ChatGPT 使用指南' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
     ['meta', { property: 'og:image', content: 'https://www.chatgpt-chinese-guide.com/og-image.png' }],
-    ['link', { rel: 'canonical', href: 'https://www.chatgpt-chinese-guide.com' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://www.chatgpt-chinese-guide.com/og-image.png' }],
+    // 移动端可访问性：允许缩放（搜索引擎对 user-scalable=no 会扣 a11y 分）
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1' }],
+    ['meta', { name: 'theme-color', content: '#10a37f' }],
+    ['meta', { name: 'format-detection', content: 'telephone=no' }],
+    ['link', { rel: 'icon', href: '/logo.svg' }],
     [
       'script',
       { type: 'application/ld+json' },
@@ -101,16 +117,153 @@ export default defineConfig({
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?2e3f5c9f50c34190ae43b4c3dd61195e";
-        var s = document.getElementsByTagName("script")[0]; 
+        var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();`
     ],
-    // 移动端优化 (推荐加上)
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
   ],
 
   // 4. 死链检查 (建议先设为 true，等文章都写好了再去掉，不然报错很烦)
   ignoreDeadLinks: true,
+
+  // 5. 每页动态 SEO meta（canonical / og / twitter / Article + Breadcrumb JSON-LD）
+  //    修复两个严重问题：
+  //    (a) 之前全站 canonical 都指向首页 → 现在每页指向自己
+  //    (b) 之前所有页面共用同一段 og:title / og:description → 现在每页用自己 frontmatter 里的
+  transformHead({ pageData }) {
+    const SITE = 'https://www.chatgpt-chinese-guide.com'
+    const SITE_NAME = 'ChatGPT 使用指南'
+    const DEFAULT_OG_IMAGE = `${SITE}/og-image.png`
+
+    const rel = (pageData.relativePath || '')
+      .replace(/(^|\/)index\.md$/, '$1')
+      .replace(/\.md$/, '')
+    const url = rel ? `${SITE}/${rel}` : `${SITE}/`
+    const isHome = !rel || rel === ''
+    const isArticle = !isHome && /^(chatgpt|guides|blog)\//.test(rel)
+
+    const fm = pageData.frontmatter || {}
+    const pageTitle: string =
+      fm.title ||
+      pageData.title ||
+      (isHome ? 'ChatGPT 使用指南 | ChatGPT中文版教程' : '')
+    const pageDesc: string =
+      fm.description ||
+      pageData.description ||
+      (isHome
+        ? '最全面的ChatGPT中文使用教程与评测中心：新手入门、镜像站排名、GPT-5.4 / Claude / Gemini 模型对比、Prompt 指南，2026 年持续更新。'
+        : '')
+
+    const ogImage: string = fm.image || fm.ogImage || DEFAULT_OG_IMAGE
+    const lastUpdatedMs =
+      (pageData as any).lastUpdated || (fm.date ? Date.parse(fm.date) : undefined)
+    const datePublishedISO = fm.date
+      ? new Date(fm.date).toISOString()
+      : lastUpdatedMs
+      ? new Date(lastUpdatedMs).toISOString()
+      : undefined
+    const dateModifiedISO = lastUpdatedMs
+      ? new Date(lastUpdatedMs).toISOString()
+      : datePublishedISO
+
+    const head: any[] = [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:url', content: url }],
+    ]
+
+    if (pageTitle) {
+      head.push(['meta', { property: 'og:title', content: pageTitle }])
+      head.push(['meta', { name: 'twitter:title', content: pageTitle }])
+    }
+    if (pageDesc) {
+      head.push(['meta', { name: 'description', content: pageDesc }])
+      head.push(['meta', { property: 'og:description', content: pageDesc }])
+      head.push(['meta', { name: 'twitter:description', content: pageDesc }])
+    }
+    if (ogImage) {
+      head.push(['meta', { property: 'og:image', content: ogImage }])
+      head.push(['meta', { name: 'twitter:image', content: ogImage }])
+    }
+
+    // 内页 og:type = article，并附带发布/修改时间
+    if (isArticle) {
+      head.push(['meta', { property: 'og:type', content: 'article' }])
+      if (datePublishedISO) {
+        head.push(['meta', { property: 'article:published_time', content: datePublishedISO }])
+      }
+      if (dateModifiedISO) {
+        head.push(['meta', { property: 'article:modified_time', content: dateModifiedISO }])
+      }
+
+      // Article JSON-LD（给 Bing/Google 富搜索结果用）
+      const articleSchema: any = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: pageTitle,
+        description: pageDesc,
+        url,
+        image: ogImage,
+        inLanguage: 'zh-CN',
+        mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+        author: { '@type': 'Organization', name: SITE_NAME, url: SITE },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE_NAME,
+          url: SITE,
+          logo: { '@type': 'ImageObject', url: `${SITE}/logo.svg` },
+        },
+      }
+      if (datePublishedISO) articleSchema.datePublished = datePublishedISO
+      if (dateModifiedISO) articleSchema.dateModified = dateModifiedISO
+      head.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(articleSchema),
+      ])
+
+      // BreadcrumbList JSON-LD
+      const parts = rel.split('/')
+      const sectionMap: Record<string, string> = {
+        chatgpt: 'ChatGPT 教程',
+        guides: '使用指南',
+        blog: 'Blog',
+      }
+      const items: any[] = [
+        { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE}/` },
+      ]
+      let acc = SITE
+      parts.forEach((seg, i) => {
+        acc += '/' + seg
+        const isLast = i === parts.length - 1
+        const name =
+          i === 0
+            ? sectionMap[seg] || seg
+            : isLast
+            ? pageTitle || seg
+            : seg
+        items.push({
+          '@type': 'ListItem',
+          position: i + 2,
+          name,
+          item: acc,
+        })
+      })
+      head.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: items,
+        }),
+      ])
+    } else {
+      head.push(['meta', { property: 'og:type', content: 'website' }])
+    }
+
+    return head
+  },
+
 
   themeConfig: {
     logo: '/logo.svg',
@@ -142,6 +295,14 @@ export default defineConfig({
           text: '入门教程',
           collapsed: false,
           items: [
+            { text: 'ChatGPT提示词完全指南2026年5月最新版（黄金7要素+25大进阶技巧+60个实战模板+全场景FAQ）', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-511' },
+            { text: 'ChatGPT提示词终极指南2026年5月最新版（黄金7要素+30大进阶技巧+80个实战模板+全场景FAQ）', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-510-2' },
+            { text: 'ChatGPT提示词完全指南2026年5月最新版：黄金7要素公式+25大进阶技巧+60个实战模板+FAQ', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-510' },
+            { text: 'ChatGPT提示词终极指南2026年5月最新版｜黄金7要素公式+30大进阶技巧+80个实战模板+完整FAQ', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-509' },
+            { text: 'ChatGPT提示词终极指南：从入门到精通的完整教程（2026年5月最新）', link: '/chatgpt/chatgpt-prompt-engineering-ultimate-guide-2026-05' },
+            { text: 'ChatGPT提示词大全2026最新指南：100+高效Prompt模板与万能公式（新手到高手完整教程）', link: '/chatgpt/chatgpt-prompt-complete-guide-2026-may' },
+            { text: 'ChatGPT提示词终极指南2026年5月最新版｜50+实战模板+黄金公式+进阶技巧全解析', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05' },
+            { text: 'ChatGPT使用教程：2026年5月最新完整入门到精通指南（新手必看）', link: '/chatgpt/chatgpt-shiyong-jiaocheng-2026-05' },
             { text: 'ChatGPT使用教程完整版【2026年05月最新】从注册到精通的保姆级指南', link: '/chatgpt/auto-article-1778165145818' },
             { text: '什么是ChatGPT？', link: '/chatgpt/what-is-chatgpt' },
             { text: 'ChatGPT怎么用？完整使用教程', link: '/chatgpt/chatgpt-how-to-use-complete-guide-2026-05' },
