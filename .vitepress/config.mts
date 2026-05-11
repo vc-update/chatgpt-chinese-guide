@@ -126,10 +126,10 @@ export default defineConfig({
   // 4. 死链检查 (建议先设为 true，等文章都写好了再去掉，不然报错很烦)
   ignoreDeadLinks: true,
 
-  // 5. 每页动态 SEO meta（canonical / og / twitter / Article + Breadcrumb JSON-LD）
-  //    修复两个严重问题：
-  //    (a) 之前全站 canonical 都指向首页 → 现在每页指向自己
-  //    (b) 之前所有页面共用同一段 og:title / og:description → 现在每页用自己 frontmatter 里的
+  // 5. 每页动态 SEO meta
+  //    canonical 策略：本站靠"首页霸榜核心词"获取流量，所有内页 canonical 仍统一指向首页，
+  //    把权重集中给首页（这是 chatgpt-chinese-guide 历史上能维持 Bing 首位的关键策略）。
+  //    保留 og:title / description / Article / Breadcrumb 等其他每页独立的元数据。
   transformHead({ pageData }) {
     const SITE = 'https://www.chatgpt-chinese-guide.com'
     const SITE_NAME = 'ChatGPT 使用指南'
@@ -167,7 +167,9 @@ export default defineConfig({
       : datePublishedISO
 
     const head: any[] = [
-      ['link', { rel: 'canonical', href: url }],
+      // canonical 统一指向首页（保留"首页霸榜"权重集中策略）
+      ['link', { rel: 'canonical', href: `${SITE}/` }],
+      // og:url 仍然用当前页面，因为这是社交分享时的回链
       ['meta', { property: 'og:url', content: url }],
     ]
 
