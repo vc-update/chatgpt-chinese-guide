@@ -297,6 +297,7 @@ export default defineConfig({
           text: '入门教程',
           collapsed: false,
           items: [
+            { text: 'ChatGPT官网中文版2026：GPT-5.5国内使用教程与镜像站推荐（无需翻墙）', link: '/chatgpt/chatgpt-guanwang-zhongwen-ban-gpt55-guonei-jiaocheng-2026' },
             { text: 'ChatGPT提示词完全指南2026年5月最新版（黄金7要素+25大进阶技巧+60个实战模板+全场景FAQ）', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-511' },
             { text: 'ChatGPT提示词终极指南2026年5月最新版（黄金7要素+30大进阶技巧+80个实战模板+全场景FAQ）', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-510-2' },
             { text: 'ChatGPT提示词完全指南2026年5月最新版：黄金7要素公式+25大进阶技巧+60个实战模板+FAQ', link: '/chatgpt/chatgpt-prompt-ultimate-guide-2026-05-510' },
