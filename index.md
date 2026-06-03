@@ -7,11 +7,11 @@ hero:
   tagline: 最全面的ChatGPT中文教程与评测中心。提供新手入门指南、GPT-5.4深度评测、镜像站排名对比、Prompt技巧大全，2026年持续更新。
   actions:
     - theme: brand
-      text: ChatGPT中文版入口
-      link: https://www.snakegpt.vip/#/chat
+      text: 查看国内使用指南
+      link: /chatgpt/chatgpt-guonei-zhongwen-ban-shiyong-zhinan-2026-04
     - theme: alt
-      text: ChatGPT镜像网站入口
-      link: https://gptcat.cc
+      text: 阅读镜像站评测
+      link: /chatgpt/chatgpt-jingxiang-wangzhan-shice-tuijian-bipkeng-2026
 
 features:
   - title: 📖 新手入门教程

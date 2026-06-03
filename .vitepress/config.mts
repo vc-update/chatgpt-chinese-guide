@@ -356,11 +356,12 @@ export default defineConfig({
         {
           text: '图片生成',
           collapsed: true,
-          items: [
-            { text: 'GPT Image 2 完全指南', link: '/chatgpt/chatgpt-image-generation-guide-gpt-image-2-2026' },
-            { text: 'Images 2.0 八大场景实测', link: '/chatgpt/chatgpt-images-2-0-gpt-image-2-wanzheng-jiaocheng-2026' },
-          ]
-        },
+            items: [
+              { text: 'GPT Image 2 完全指南', link: '/chatgpt/chatgpt-image-generation-guide-gpt-image-2-2026' },
+              { text: 'Images 2.0 中文商业设计实测', link: '/chatgpt/chatgpt-images-2-chinese-commercial-design-prompts-2026' },
+              { text: 'Images 2.0 八大场景实测', link: '/chatgpt/chatgpt-images-2-0-gpt-image-2-wanzheng-jiaocheng-2026' },
+            ]
+          },
         {
           text: '常见问题',
           collapsed: true,
