@@ -11,7 +11,32 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://www.chatgpt-chinese-guide.com',
     transformItems: (items) => {
-      return items.map(item => {
+      const keepPatterns = [
+        /^$/,
+        /^\/?$/,
+        /^index\.html$/,
+        /^disclaimer(\.html)?$/,
+        /^blog\/?$/,
+        /^chatgpt\/?$/,
+        /^guides\/?$/,
+        /^chatgpt\/what-is-chatgpt(\.html)?$/,
+        /^chatgpt\/chatgpt-chinese-complete-tutorial-register-to-master-april-2026(\.html)?$/,
+        /^chatgpt\/chatgpt-2026-05-guide(\.html)?$/,
+        /^chatgpt\/chatgpt-how-to-use-complete-guide-2026-05(\.html)?$/,
+        /^chatgpt\/chatgpt-prompt-complete-guide-2026-may(\.html)?$/,
+        /^chatgpt\/chatgpt-images-2-chinese-commercial-design-prompts-2026(\.html)?$/,
+        /^chatgpt\/chatgpt-ai-coding-guide-gpt54-claude46-april-2026(\.html)?$/,
+        /^chatgpt\/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026(\.html)?$/,
+        /^chatgpt\/chatgpt-ai-tools-ranking-five-models-comparison-april-2026(\.html)?$/,
+        /^guides\/chatgpt-dev\/(quickstart|openai-api-guide|prompt-engineering|image-generation|text-generation|vision)(\.html)?$/,
+        /^blog\/chatgpt-prompt-engineering-guide(\.html)?$/,
+        /^blog\/future-of-llm-2025(\.html)?$/,
+      ]
+
+      return items.filter(item => {
+        const url = (item.url || '').replace(/^\/+/, '')
+        return keepPatterns.some(pattern => pattern.test(url))
+      }).map(item => {
         const url = item.url || ''
         let priority = 0.6
         let changefreq: 'daily' | 'weekly' | 'monthly' = 'monthly'
@@ -40,7 +65,6 @@ export default defineConfig({
     // 站点级 keywords / og（首页/未指定页面的 fallback；内页会被 transformHead 覆盖）
     ['meta', { name: 'keywords', content: 'ChatGPT,ChatGPT教程,ChatGPT使用指南,OpenAI,Claude,Gemini,AI工具评测,Prompt教程,AI图片生成' }],
     ['meta', { name: 'author', content: 'ChatGPT使用指南' }],
-    ['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'ChatGPT 使用指南' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
@@ -127,9 +151,8 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   // 5. 每页动态 SEO meta
-  //    canonical 策略：本站靠"首页霸榜核心词"获取流量，所有内页 canonical 仍统一指向首页，
-  //    把权重集中给首页（这是 chatgpt-chinese-guide 历史上能维持 Bing 首位的关键策略）。
-  //    保留 og:title / description / Article / Breadcrumb 等其他每页独立的元数据。
+  //    恢复模式：每页 canonical 指向自身，避免全站被搜索引擎识别为重复/门页集合。
+  //    对入口、镜像、免费直连等高风险历史页面临时 noindex,follow，保留链接发现但不请求索引。
   transformHead({ pageData }) {
     const SITE = 'https://www.chatgpt-chinese-guide.com'
     const SITE_NAME = 'ChatGPT 使用指南'
@@ -141,6 +164,32 @@ export default defineConfig({
     const url = rel ? `${SITE}/${rel}` : `${SITE}/`
     const isHome = !rel || rel === ''
     const isArticle = !isHome && /^(chatgpt|guides|blog)\//.test(rel)
+    const indexAllowList = new Set([
+      '',
+      'disclaimer',
+      'chatgpt/',
+      'blog/',
+      'guides/',
+      'chatgpt/what-is-chatgpt',
+      'chatgpt/chatgpt-chinese-complete-tutorial-register-to-master-april-2026',
+      'chatgpt/chatgpt-2026-05-guide',
+      'chatgpt/chatgpt-how-to-use-complete-guide-2026-05',
+      'chatgpt/chatgpt-prompt-complete-guide-2026-may',
+      'chatgpt/chatgpt-images-2-chinese-commercial-design-prompts-2026',
+      'chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026',
+      'chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026',
+      'chatgpt/chatgpt-ai-tools-ranking-five-models-comparison-april-2026',
+      'guides/chatgpt-dev/quickstart',
+      'guides/chatgpt-dev/openai-api-guide',
+      'guides/chatgpt-dev/prompt-engineering',
+      'guides/chatgpt-dev/image-generation',
+      'guides/chatgpt-dev/text-generation',
+      'guides/chatgpt-dev/vision',
+      'blog/chatgpt-prompt-engineering-guide',
+      'blog/future-of-llm-2025',
+    ])
+    const normalizedRel = rel.replace(/\/$/, '')
+    const isIndexAllowed = indexAllowList.has(rel) || indexAllowList.has(normalizedRel)
 
     const fm = pageData.frontmatter || {}
     const pageTitle: string =
@@ -167,11 +216,16 @@ export default defineConfig({
       : datePublishedISO
 
     const head: any[] = [
-      // canonical 统一指向首页（保留"首页霸榜"权重集中策略）
-      ['link', { rel: 'canonical', href: `${SITE}/` }],
+      ['link', { rel: 'canonical', href: url }],
       // og:url 仍然用当前页面，因为这是社交分享时的回链
       ['meta', { property: 'og:url', content: url }],
     ]
+
+    if (isIndexAllowed) {
+      head.push(['meta', { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }])
+    } else {
+      head.push(['meta', { name: 'robots', content: 'noindex,follow,max-snippet:-1,max-image-preview:large' }])
+    }
 
     if (pageTitle) {
       head.push(['meta', { property: 'og:title', content: pageTitle }])
