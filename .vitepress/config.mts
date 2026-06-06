@@ -1,10 +1,67 @@
 ﻿import { defineConfig } from 'vitepress'
 
+const recoverySidebar = {
+  '/chatgpt/': [
+    {
+      text: '核心教程',
+      collapsed: false,
+      items: [
+        { text: '什么是 ChatGPT？', link: '/chatgpt/what-is-chatgpt' },
+        { text: 'ChatGPT 新手完整教程', link: '/chatgpt/chatgpt-chinese-complete-tutorial-register-to-master-april-2026' },
+        { text: 'ChatGPT 2026 使用指南', link: '/chatgpt/chatgpt-2026-05-guide' },
+        { text: 'ChatGPT 怎么用？完整教程', link: '/chatgpt/chatgpt-how-to-use-complete-guide-2026-05' },
+        { text: 'ChatGPT Prompt 完整指南', link: '/chatgpt/chatgpt-prompt-complete-guide-2026-may' },
+      ],
+    },
+    {
+      text: '专题评测',
+      collapsed: false,
+      items: [
+        { text: 'AI 工具模型横评', link: '/chatgpt/chatgpt-ai-tools-ranking-five-models-comparison-april-2026' },
+        { text: 'ChatGPT 写代码实测', link: '/chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026' },
+        { text: 'AI 论文写作指南', link: '/chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026' },
+        { text: 'AI 图片商业设计实测', link: '/chatgpt/chatgpt-images-2-chinese-commercial-design-prompts-2026' },
+      ],
+    },
+  ],
+  '/guides/': [
+    {
+      text: 'OpenAI 开发',
+      collapsed: false,
+      items: [
+        { text: '快速开始', link: '/guides/chatgpt-dev/quickstart.html' },
+        { text: 'OpenAI API 指南', link: '/guides/chatgpt-dev/openai-api-guide.html' },
+        { text: 'Prompt 工程', link: '/guides/chatgpt-dev/prompt-engineering.html' },
+        { text: '文本生成', link: '/guides/chatgpt-dev/text-generation.html' },
+        { text: '图像生成', link: '/guides/chatgpt-dev/image-generation.html' },
+        { text: '视觉理解', link: '/guides/chatgpt-dev/vision.html' },
+      ],
+    },
+  ],
+  '/blog/': [
+    {
+      text: '精选文章',
+      collapsed: false,
+      items: [
+        { text: 'ChatGPT Prompt 工程指南', link: '/blog/chatgpt-prompt-engineering-guide.html' },
+        { text: '大模型未来趋势', link: '/blog/future-of-llm-2025.html' },
+      ],
+    },
+  ],
+}
+
+const recoveryThemeOverrides = {
+  sidebar: recoverySidebar,
+  // 恢复期关闭本地搜索，避免所有历史文章标题被打包进前端搜索索引。
+  search: undefined,
+} as any
+
 export default defineConfig({
   // 1. 网站元数据
   title: "ChatGPT教程 | 中文AI使用指南 | 模型评测与Prompt技巧",
   description: "独立中文AI教程与工具评测中心。提供ChatGPT入门指南、模型对比、Prompt技巧、AI图片生成教程与安全使用建议，2026年持续更新。",
   lang: 'zh-CN',
+  mpa: true,
   
   // 2. 关键 SEO 配置 (你漏掉的部分)
   // 自动生成 sitemap，Bing 爬虫全靠它来抓取你的页面
@@ -723,8 +780,6 @@ export default defineConfig({
       copyright: 'Copyright © 2025-2026 ChatGPT使用指南'
     },
 
-    search: {
-      provider: 'local'
-    }
+    ...recoveryThemeOverrides
   }
 })

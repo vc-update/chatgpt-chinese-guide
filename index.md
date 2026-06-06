@@ -7,15 +7,15 @@ hero:
   tagline: 独立中文 AI 教程与工具评测中心。提供 ChatGPT 入门指南、模型对比、Prompt 技巧、AI 图片生成教程与安全使用建议，2026年持续更新。
   actions:
     - theme: brand
-      text: 查看国内使用指南
-      link: /chatgpt/chatgpt-guonei-zhongwen-ban-shiyong-zhinan-2026-04
+      text: 查看使用指南
+      link: /chatgpt/chatgpt-2026-05-guide
     - theme: alt
       text: 查看工具评测
-      link: /chatgpt/chatgpt-jingxiang-wangzhan-shice-tuijian-bipkeng-2026
+      link: /chatgpt/chatgpt-ai-tools-ranking-five-models-comparison-april-2026
 
 features:
   - title: 📖 新手入门教程
-    details: 从零开始学ChatGPT，手把手教你注册、使用、提问技巧，10分钟从小白变高手。
+    details: 从零开始了解ChatGPT，整理账号安全、基础使用和提问技巧。
   - title: 🔍 AI工具评测与避坑
     details: 从功能、价格、稳定性、隐私与账号安全等维度整理第三方AI工具使用建议。
   - title: 🤖 模型横评对比
@@ -36,25 +36,25 @@ features:
 
 ### 📚 我们提供什么？
 
-- **新手入门教程**：从注册账号到熟练使用，零基础也能10分钟上手
+- **新手入门教程**：从账号安全、基础概念到常见使用场景，帮助新手系统上手
 - **第三方AI工具评测**：从功能、价格、稳定性、隐私和账号安全角度整理使用建议
 - **模型对比评测**：GPT-5.4、Claude 4.6、Gemini 3.1 Pro、DeepSeek-V3 深度横评
 - **Prompt提示词教程**：80+万能模板，覆盖写作、编程、论文、办公全场景
-- **AI副业变现指南**：用ChatGPT赚钱的7个靠谱方向
+- **AI工作流案例**：整理写作、办公、编程和学习中的真实应用方式
 
 ### 🌟 2026年热门教程
 
 | 教程 | 适合人群 | 难度 |
 |:---|:---|:---|
 | [ChatGPT新手完整教程](/chatgpt/chatgpt-chinese-complete-tutorial-register-to-master-april-2026.html) | 完全新手 | ⭐ |
-| [第三方AI工具评测与避坑](/chatgpt/chatgpt-jingxiang-wangzhan-shice-tuijian-bipkeng-2026.html) | 所有用户 | ⭐ |
-| [GPT-5.4模型使用教程](/chatgpt/gpt-5-4-guonei-zenme-yong-zhongwen-ban-jiaocheng-2026.html) | 进阶用户 | ⭐⭐ |
+| [第三方AI工具模型横评](/chatgpt/chatgpt-ai-tools-ranking-five-models-comparison-april-2026.html) | 所有用户 | ⭐ |
+| [ChatGPT 2026使用指南](/chatgpt/chatgpt-2026-05-guide.html) | 进阶用户 | ⭐⭐ |
 | [AI论文写作完整指南](/chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026.html) | 学生/研究者 | ⭐⭐ |
 | [ChatGPT写代码实测](/chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026.html) | 程序员 | ⭐⭐⭐ |
 
 ### ❓ 常见问题
 
-**Q：ChatGPT国内能用吗？**
+**Q：ChatGPT 官方服务可用性如何确认？**
 
 A：ChatGPT 官方服务的可用性会受到地区、网络环境、账号政策和产品调整影响。本站建议先了解 OpenAI 官方说明、账号安全要求和数据隐私边界；如需评估第三方 AI 工具，请优先阅读独立评测、隐私政策和支付说明，不要在不可信页面输入账号密码、验证码或银行卡信息。
 
