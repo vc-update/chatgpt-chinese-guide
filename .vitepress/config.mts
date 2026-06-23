@@ -1,4 +1,47 @@
 ﻿import { defineConfig } from 'vitepress'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+
+const SITE = 'https://www.chatgpt-chinese-guide.com'
+
+function normalizeRoute(value: string): string {
+  let route = (value || '').trim().replace(/^https?:\/\/[^/]+/i, '')
+  route = route.split(/[?#]/)[0]
+  if (!route || route === '/') return '/'
+  if (!route.startsWith('/')) route = `/${route}`
+  route = route.replace(/\/index(?:\.html)?$/, '/')
+  route = route.replace(/\.html$/, '')
+  route = route.replace(/\/$/, '')
+  return route || '/'
+}
+
+function loadSeoGrades(): Map<string, string> {
+  const grades = new Map<string, string>()
+  try {
+    const raw = readFileSync(resolve(process.cwd(), '.vitepress', 'seo-grades.json'), 'utf-8')
+      .replace(/^\uFEFF/, '')
+    const data = JSON.parse(raw) as { grades?: Record<string, string[]> }
+    for (const [grade, routes] of Object.entries(data.grades || {})) {
+      if (!Array.isArray(routes)) continue
+      for (const route of routes) {
+        grades.set(normalizeRoute(route), grade)
+      }
+    }
+  } catch {
+    // Keep the site buildable if the optional recovery map is unavailable.
+  }
+  return grades
+}
+
+const seoGrades = loadSeoGrades()
+const sectionIndexRoutes = new Set(['/', '/disclaimer', '/chatgpt', '/guides', '/blog'])
+
+function isIndexableRoute(value: string): boolean {
+  const route = normalizeRoute(value)
+  if (sectionIndexRoutes.has(route)) return true
+  const grade = seoGrades.get(route)
+  return grade === 'A' || grade === 'B' || grade === 'C'
+}
 
 const recoverySidebar = {
   '/chatgpt/': [
@@ -66,48 +109,37 @@ export default defineConfig({
   // 2. 关键 SEO 配置 (你漏掉的部分)
   // 自动生成 sitemap，Bing 爬虫全靠它来抓取你的页面
   sitemap: {
-    hostname: 'https://www.chatgpt-chinese-guide.com',
+    hostname: SITE,
     transformItems: (items) => {
-      const keepPatterns = [
-        /^$/,
-        /^\/?$/,
-        /^index\.html$/,
-        /^disclaimer(\.html)?$/,
-        /^blog\/?$/,
-        /^chatgpt\/?$/,
-        /^guides\/?$/,
-        /^chatgpt\/what-is-chatgpt(\.html)?$/,
-        /^chatgpt\/chatgpt-chinese-complete-tutorial-register-to-master-april-2026(\.html)?$/,
-        /^chatgpt\/chatgpt-2026-05-guide(\.html)?$/,
-        /^chatgpt\/chatgpt-how-to-use-complete-guide-2026-05(\.html)?$/,
-        /^chatgpt\/chatgpt-prompt-complete-guide-2026-may(\.html)?$/,
-        /^chatgpt\/chatgpt-images-2-chinese-commercial-design-prompts-2026(\.html)?$/,
-        /^chatgpt\/chatgpt-ai-coding-guide-gpt54-claude46-april-2026(\.html)?$/,
-        /^chatgpt\/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026(\.html)?$/,
-        /^chatgpt\/chatgpt-ai-tools-ranking-five-models-comparison-april-2026(\.html)?$/,
-        /^guides\/chatgpt-dev\/(quickstart|openai-api-guide|prompt-engineering|image-generation|text-generation|vision)(\.html)?$/,
-        /^blog\/chatgpt-prompt-engineering-guide(\.html)?$/,
-        /^blog\/future-of-llm-2025(\.html)?$/,
-      ]
-
       return items.filter(item => {
-        const url = (item.url || '').replace(/^\/+/, '')
-        return keepPatterns.some(pattern => pattern.test(url))
+        const route = normalizeRoute(item.url || '')
+        return isIndexableRoute(route)
       }).map(item => {
         const url = item.url || ''
+        const route = normalizeRoute(url)
+        const grade = seoGrades.get(route)
         let priority = 0.6
         let changefreq: 'daily' | 'weekly' | 'monthly' = 'monthly'
-        if (url === '' || url === '/' || url === 'index.html') {
+        if (route === '/') {
           priority = 1.0
           changefreq = 'weekly'
-        } else if (/^(chatgpt|guides|blog)\/?$/.test(url) || /\/index\.html$/.test(url)) {
+        } else if (sectionIndexRoutes.has(route)) {
           priority = 0.8
           changefreq = 'weekly'
+        } else if (grade === 'A') {
+          priority = 0.9
+          changefreq = 'weekly'
+        } else if (grade === 'B') {
+          priority = 0.75
+          changefreq = 'monthly'
+        } else if (grade === 'C') {
+          priority = 0.55
+          changefreq = 'monthly'
         }
         return {
           ...item,
-          changefreq: item.changefreq || changefreq,
-          priority: item.priority ?? priority,
+          changefreq,
+          priority,
           // 不覆盖 lastmod；VitePress 默认会用 git/文件 mtime
         }
       })
@@ -209,9 +241,8 @@ export default defineConfig({
 
   // 5. 每页动态 SEO meta
   //    恢复模式：每页 canonical 指向自身，避免全站被搜索引擎识别为重复/门页集合。
-  //    对入口、镜像、免费直连等高风险历史页面临时 noindex,follow，保留链接发现但不请求索引。
+  //    按历史 Bing 表现恢复 A/B/C 页面索引，D 档零展示页面继续 noindex,follow。
   transformHead({ pageData }) {
-    const SITE = 'https://www.chatgpt-chinese-guide.com'
     const SITE_NAME = 'ChatGPT 使用指南'
     const DEFAULT_OG_IMAGE = `${SITE}/og-image.png`
 
@@ -219,34 +250,10 @@ export default defineConfig({
       .replace(/(^|\/)index\.md$/, '$1')
       .replace(/\.md$/, '')
     const url = rel ? `${SITE}/${rel}` : `${SITE}/`
+    const route = normalizeRoute(url)
     const isHome = !rel || rel === ''
     const isArticle = !isHome && /^(chatgpt|guides|blog)\//.test(rel)
-    const indexAllowList = new Set([
-      '',
-      'disclaimer',
-      'chatgpt/',
-      'blog/',
-      'guides/',
-      'chatgpt/what-is-chatgpt',
-      'chatgpt/chatgpt-chinese-complete-tutorial-register-to-master-april-2026',
-      'chatgpt/chatgpt-2026-05-guide',
-      'chatgpt/chatgpt-how-to-use-complete-guide-2026-05',
-      'chatgpt/chatgpt-prompt-complete-guide-2026-may',
-      'chatgpt/chatgpt-images-2-chinese-commercial-design-prompts-2026',
-      'chatgpt/chatgpt-ai-coding-guide-gpt54-claude46-april-2026',
-      'chatgpt/ai-lunwen-xiezuo-chatgpt-claude-jiangchong-runse-2026',
-      'chatgpt/chatgpt-ai-tools-ranking-five-models-comparison-april-2026',
-      'guides/chatgpt-dev/quickstart',
-      'guides/chatgpt-dev/openai-api-guide',
-      'guides/chatgpt-dev/prompt-engineering',
-      'guides/chatgpt-dev/image-generation',
-      'guides/chatgpt-dev/text-generation',
-      'guides/chatgpt-dev/vision',
-      'blog/chatgpt-prompt-engineering-guide',
-      'blog/future-of-llm-2025',
-    ])
-    const normalizedRel = rel.replace(/\/$/, '')
-    const isIndexAllowed = indexAllowList.has(rel) || indexAllowList.has(normalizedRel)
+    const isIndexAllowed = isIndexableRoute(route)
 
     const fm = pageData.frontmatter || {}
     const pageTitle: string =
